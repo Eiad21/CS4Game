@@ -16,7 +16,7 @@ abstract public class Disaster implements Simulatable {
 		active = false;
 	}
 	
-	//getter(s)
+	//Getter(s)
 	public int getStartCycle() {
 		return startCycle;
 	}
@@ -27,7 +27,7 @@ abstract public class Disaster implements Simulatable {
 		return active;
 	}
 	
-	//setter(s)
+	//Setter(s)
 	public void setActive(boolean active) {
 		this.active = active;
 	}
