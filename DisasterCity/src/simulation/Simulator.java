@@ -19,5 +19,20 @@ public class Simulator {
 	// Constructor(s)
 	public Simulator() {
 		// #TODO Implement body of constructor
+		// Initialize all 4 ArrayLists and the world array
+	}
+	
+	// Methods
+	private void loadUnits(String filepath) {
+		//#TODO Implement method
+	}
+	private void loadBuildings(String filepath) {
+		//#TODO Implement method
+	}
+	private void loadCitizens(String filepath) {
+		//#TODO Implement method
+	}
+	private void loadDisasters(String filepath) {
+		//#TODO Implement method
 	}
 }
