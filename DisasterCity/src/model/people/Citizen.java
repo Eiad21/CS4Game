@@ -12,17 +12,17 @@ public class Citizen implements Simulatable, Rescuable {
 	private int bloodLoss;
 	private int toxicity;
 	
-//Constructor
-public Citizen(Address location, String nationalID, String name, int age){
-	this.location=location;
-	this.nationalID=nationalID;
-	this.name=name;
-	this.age=age;
-	state=CitizenState.SAFE;
-	hp=100;
-	bloodLoss=0;
-	toxicity=0;
-}
+	//Constructor
+	public Citizen(Address location, String nationalID, String name, int age){
+		this.location=location;
+		this.nationalID=nationalID;
+		this.name=name;
+		this.age=age;
+		state=CitizenState.SAFE;
+		hp=100;
+		bloodLoss=0;
+		toxicity=0;
+	}
 	//Getter(s)
 	public CitizenState getState() {
 		return state;
