@@ -7,17 +7,17 @@ import model.infrastucture.ResidentialBuilding;
 import model.people.Citizen;
 
 public class Simulator {
-	
-	//Instance Variables
+
+	// Instance Variables
 	private int currentCycle;
 	private ArrayList<ResidentialBuilding> buildings;
 	private ArrayList<Citizen> citizens;
 	private ArrayList<Disaster> plannedDisasters;
 	private ArrayList<Disaster> executedDisasters;
 	private Address[][] world;
-	
-	//Constructor(s)
+
+	// Constructor(s)
 	public Simulator() {
-		//#TODO Implement body of constructor
+		// #TODO Implement body of constructor
 	}
 }
