@@ -1,6 +1,7 @@
 package model.people;
 import model.disasters.*;
 import simulation.*;
+
 public class Citizen implements Simulatable, Rescuable {
 	private CitizenState state; 
 	private Disaster disaster;
@@ -23,22 +24,20 @@ public class Citizen implements Simulatable, Rescuable {
 		bloodLoss=0;
 		toxicity=0;
 	}
+	
 	//Getter(s)
 	public CitizenState getState() {
 		return state;
 	}
-		
 	public Disaster getDisaster() {
 		return disaster;
 	}
-	
 	public Address getLocation() {
 		return location;
 	}
 	public String getNationalID() {
 		return nationalID;
 	}
-	
 	public String getName() {
 		return name;
 	}
