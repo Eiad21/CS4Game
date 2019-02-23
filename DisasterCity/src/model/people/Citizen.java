@@ -1,7 +1,7 @@
 package model.people;
 import model.disasters.*;
 import simulation.*;
-public class Citizen {
+public class Citizen implements Simulatable, Rescuable {
 	private CitizenState state; 
 	private Disaster disaster;
 	private Address location;
