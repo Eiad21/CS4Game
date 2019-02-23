@@ -19,6 +19,9 @@ public Citizen(Address location, String nationalID, String name, int age){
 	this.name=name;
 	this.age=age;
 	state=CitizenState.SAFE;
+	hp=100;
+	bloodLoss=0;
+	toxicity=0;
 }
 	//Getter(s)
 	public CitizenState getState() {
