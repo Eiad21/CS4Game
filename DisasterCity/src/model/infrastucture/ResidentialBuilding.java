@@ -16,7 +16,7 @@ public class ResidentialBuilding implements Simulatable, Rescuable {
 	private ArrayList<Citizen> occupants;
 	private Disaster disaster;
 
-//Constructor
+	// Constructor
 	public ResidentialBuilding(Address location) {
 		this.location = location;
 		structuralIntegrity = 100;
