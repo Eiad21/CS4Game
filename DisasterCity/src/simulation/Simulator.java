@@ -1,6 +1,9 @@
 package simulation;
 
 import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 import model.disasters.Disaster;
 import model.infrastucture.ResidentialBuilding;
@@ -17,9 +20,18 @@ public class Simulator {
 	private Address[][] world = new Address[10][10];
 
 	// Constructor(s)
-	public Simulator() {
-		
-	}
+	public Simulator() throws NumberFormatException, IOException {
+		String currentLine = "";
+		FileReader fileReader= new FileReader("buildings.csv");
+		BufferedReader br = new BufferedReader(fileReader);
+		while ((currentLine = br.readLine()) != null)  {
+		String[] a = currentLine.split(",");
+		Address c = world[Integer.parseInt(a[0])][Integer.parseInt(a[1])];
+		ResidentialBuilding b = new ResidentialBuilding(c);
+		buildings.add(b);
+		}
+		}
+	
 	
 	// Methods
 	private void loadUnits(String filepath) {
