@@ -10,16 +10,15 @@ public class Simulator {
 
 	// Instance Variables
 	private int currentCycle;
-	private ArrayList<ResidentialBuilding> buildings;
-	private ArrayList<Citizen> citizens;
-	private ArrayList<Disaster> plannedDisasters;
-	private ArrayList<Disaster> executedDisasters;
-	private Address[][] world;
+	private ArrayList<ResidentialBuilding> buildings = new ArrayList<ResidentialBuilding> ();
+	private ArrayList<Citizen> citizens = new ArrayList<Citizen> ();
+	private ArrayList<Disaster> plannedDisasters = new ArrayList<Disaster> ();
+	private ArrayList<Disaster> executedDisasters = new ArrayList<Disaster> ();
+	private Address[][] world = new Address[10][10];
 
 	// Constructor(s)
 	public Simulator() {
-		// #TODO Implement body of constructor
-		// Initialize all 4 ArrayLists and the world array
+		
 	}
 	
 	// Methods
