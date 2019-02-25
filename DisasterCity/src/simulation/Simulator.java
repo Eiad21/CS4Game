@@ -7,16 +7,16 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.disasters.Disaster;
-import model.infrastucture.ResidentialBuilding;
+import model.infrastructure.ResidentialBuilding;
 import model.people.Citizen;
 import model.units.Unit;
 
 public class Simulator {
-	// Static Variables
+	 // Static Variables
 	FileReader fileReader;
 	BufferedReader br;
-	
-	// Instance Variables
+
+	 // Instance Variables
 	private int currentCycle;
 	private ArrayList<Unit> emergencyUnits;
 	private ArrayList<ResidentialBuilding> buildings;
@@ -25,7 +25,7 @@ public class Simulator {
 	private ArrayList<Disaster> executedDisasters;
 	private Address[][] world;
 
-	// Constructor(s)
+	 // Constructor(s)
 	public Simulator() throws Exception {
 		emergencyUnits = new ArrayList<>();
 		buildings = new ArrayList<ResidentialBuilding>();
@@ -35,8 +35,8 @@ public class Simulator {
 		world = new Address[10][10];
 	}
 
-	// Methods
-	private void loadUnits(String filepath) {
+	 // Methods
+	private void loadUnits(String filepath) throws Exception {
 		// #TODO Implement method
 	}
 
@@ -52,11 +52,11 @@ public class Simulator {
 		}
 	}
 
-	private void loadCitizens(String filepath) {
+	private void loadCitizens(String filepath) throws Exception {
 		// #TODO Implement method
 	}
 
-	private void loadDisasters(String filepath) {
+	private void loadDisasters(String filepath) throws Exception {
 		// #TODO Implement method
 	}
 }

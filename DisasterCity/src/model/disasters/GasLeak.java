@@ -1,6 +1,6 @@
 package model.disasters;
 
-import model.infrastucture.ResidentialBuilding;
+import model.infrastructure.ResidentialBuilding;
 import simulation.Rescuable;
 
 public class GasLeak extends Disaster {
