@@ -53,7 +53,15 @@ public class Simulator {
 	}
 
 	private void loadCitizens(String filepath) throws Exception {
-		
+		String currentLine = "";
+		fileReader = new FileReader(filepath);
+		br = new BufferedReader(fileReader);
+		while ((currentLine = br.readLine()) != null) {
+			String[] a = currentLine.split(",");
+			Address c = world[Integer.parseInt(a[0])][Integer.parseInt(a[1])];
+			Citizen citizen = new Citizen(c,a[2],a[3],Integer.parseInt(a[4]));
+			citizens.add(citizen);
+		}
 	}
 
 	private void loadDisasters(String filepath) throws Exception {
