@@ -36,8 +36,8 @@ public class Simulator {
 	}
 
 	// Methods
-	private void loadUnits(String filepath) {
-		// #TODO Implement method
+	private void loadUnits(String filepath) throws Exception {
+		// TODO: Implement method
 	}
 
 	private void loadBuildings(String filepath) throws Exception {
@@ -52,11 +52,11 @@ public class Simulator {
 		}
 	}
 
-	private void loadCitizens(String filepath) {
-		// #TODO Implement method
+	private void loadCitizens(String filepath) throws Exception {
+		
 	}
 
-	private void loadDisasters(String filepath) {
-		// #TODO Implement method
+	private void loadDisasters(String filepath) throws Exception {
+		// TODO: Implement method
 	}
 }
