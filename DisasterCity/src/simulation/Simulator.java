@@ -18,9 +18,7 @@ public class Simulator {
 
 	// Constructor(s)
 	public Simulator() {
-		ResidentialBuilding a = new ResidentialBuilding(world[2][2]);
-		ResidentialBuilding b = new ResidentialBuilding(world[5][3]);
-		ResidentialBuilding c = new ResidentialBuilding(world[7][1]);
+		
 	}
 	
 	// Methods
