@@ -7,7 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.disasters.Disaster;
-import model.infrastucture.ResidentialBuilding;
+import model.infrastructure.ResidentialBuilding;
 import model.people.Citizen;
 import model.units.Unit;
 

@@ -4,6 +4,7 @@ import model.disasters.*;
 import simulation.*;
 
 public class Citizen implements Simulatable, Rescuable {
+	 //Instance Variables
 	private CitizenState state;
 	private Disaster disaster;
 	private Address location;

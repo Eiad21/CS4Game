@@ -3,8 +3,8 @@ package model.units;
 import simulation.*;
 
 abstract public class Unit implements Simulatable {
-
-	// Instance Variables
+ 
+	 // Instance Variables
 	private String unitID;
 	private UnitState state;
 	private Address location;
@@ -12,7 +12,7 @@ abstract public class Unit implements Simulatable {
 	private int distanceToTarget;
 	private int stepsPerCycle;
 
-	// Constructor
+	 // Constructor
 	public Unit(String id, Address location, int stepsPerCycle) {
 		unitID = id;
 		this.location = location;
@@ -20,7 +20,7 @@ abstract public class Unit implements Simulatable {
 		state = UnitState.IDLE;
 	}
 
-	// Getters
+	 // Getters
 	public String getUnitID() {
 		return unitID;
 	}
@@ -41,7 +41,7 @@ abstract public class Unit implements Simulatable {
 		return stepsPerCycle;
 	}
 
-	// Setters
+	 // Setters
 	public void setState(UnitState state) {
 		this.state = state;
 	}
