@@ -37,9 +37,9 @@ public class Simulator {
 		plannedDisasters = new ArrayList<Disaster>();
 		executedDisasters = new ArrayList<Disaster>();
 		world = new Address[10][10];
-		loadCitizens("citizens_28729.csv");
+		loadCitizens("citizens.csv");
 		loadBuildings("buildings.csv");
-		loadDisasters("disasters_28730.csv");
+		loadDisasters("disasters.csv");
 	}
 
 	private void loadUnits(String filepath) throws Exception {
