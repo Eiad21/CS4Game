@@ -2,11 +2,7 @@ package simulation;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
-<<<<<<< HEAD
-
-=======
 import java.io.FileNotFoundException;
->>>>>>> branch 'master' of https://github.com/Eiad21/CS4Game.git
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -29,23 +25,7 @@ public class Simulator {
 	private ArrayList<Disaster> executedDisasters;
 	private Address[][] world;
 
-	// Constructor(s)
-<<<<<<< HEAD
-	public Simulator() throws NumberFormatException, IOException {
-		String currentLine = "";
-		FileReader fileReader= new FileReader("buildings.csv");
-		BufferedReader br = new BufferedReader(fileReader);
-		while ((currentLine = br.readLine()) != null)  {
-		String[] a = currentLine.split(",");
-		Address c = world[Integer.parseInt(a[0])][Integer.parseInt(a[1])];
-		ResidentialBuilding b = new ResidentialBuilding(c);
-		buildings.add(b);
-		}
-		
-		}
 	
-	
-=======
 	public Simulator() throws Exception {
 		emergencyUnits = new ArrayList<>();
 		buildings = new ArrayList<ResidentialBuilding>();
@@ -55,8 +35,6 @@ public class Simulator {
 		world = new Address[10][10];
 	}
 
->>>>>>> branch 'master' of https://github.com/Eiad21/CS4Game.git
-	// Methods
 	private void loadUnits(String filepath) throws Exception {
 		// TODO: Implement method
 	}
