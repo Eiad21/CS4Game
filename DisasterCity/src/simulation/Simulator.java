@@ -7,6 +7,10 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import model.disasters.Disaster;
+import model.disasters.Fire;
+import model.disasters.GasLeak;
+import model.disasters.Infection;
+import model.disasters.Injury;
 import model.infrastructure.ResidentialBuilding;
 import model.people.Citizen;
 import model.units.Unit;
@@ -33,6 +37,9 @@ public class Simulator {
 		plannedDisasters = new ArrayList<Disaster>();
 		executedDisasters = new ArrayList<Disaster>();
 		world = new Address[10][10];
+		loadCitizens("citizens_28729.csv");
+		loadBuildings("buildings.csv");
+		loadDisasters("disasters_28730.csv");
 	}
 
 	private void loadUnits(String filepath) throws Exception {
@@ -64,6 +71,41 @@ public class Simulator {
 	}
 
 	private void loadDisasters(String filepath) throws Exception {
-		// TODO: Implement method
+		String currentLine = "";
+		fileReader = new FileReader(filepath);
+		br = new BufferedReader(fileReader);
+		while ((currentLine = br.readLine()) != null) {
+			String[] a = currentLine.split(",");
+			int startCycle = Integer.parseInt(a[0]);
+			Disaster disaster;
+			switch(a[1]) {
+			case "FIR":
+				disaster = new Fire(startCycle, getBuilding(Integer.parseInt(a[2]),Integer.parseInt(a[2])));break;
+			case"GLK":	
+				disaster = new GasLeak(startCycle, getBuilding(Integer.parseInt(a[2]),Integer.parseInt(a[2])));break;
+			case"INJ":
+				disaster = new Injury(startCycle, getCitizen(a[2]));break;
+			case"INF":
+				disaster = new Infection(startCycle, getCitizen(a[2]));break;
+			default:
+				disaster = null;
+				
+			}
+			plannedDisasters.add(disaster);
+		}
+	}
+	private ResidentialBuilding getBuilding(int x, int y) {
+		for(ResidentialBuilding building : buildings) {
+			if(building.getLocation()==world[x][y])
+				return building;
+		}
+		return null;
+	}
+	private Citizen getCitizen(String nationalID) {
+		for(Citizen citizen : citizens) {
+			if(citizen.getNationalID() == nationalID)
+				return citizen;
+		}
+		return null;
 	}
 }
