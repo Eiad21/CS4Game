@@ -1,4 +1,4 @@
-package model.infrastucture;
+package model.infrastructure;
 
 import simulation.*;
 import model.people.*;
@@ -23,6 +23,7 @@ public class ResidentialBuilding implements Simulatable, Rescuable {
 		fireDamage = 0;
 		gasLevel = 0;
 		foundationDamage = 0;
+		occupants = new ArrayList<Citizen>();
 	}
 
 	// Getters
