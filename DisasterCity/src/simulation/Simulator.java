@@ -2,6 +2,7 @@ package simulation;
 
 import java.util.ArrayList;
 import java.io.BufferedReader;
+
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -30,6 +31,7 @@ public class Simulator {
 		ResidentialBuilding b = new ResidentialBuilding(c);
 		buildings.add(b);
 		}
+		
 		}
 	
 	
