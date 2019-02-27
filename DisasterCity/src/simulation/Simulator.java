@@ -37,6 +37,11 @@ public class Simulator {
 		plannedDisasters = new ArrayList<Disaster>();
 		executedDisasters = new ArrayList<Disaster>();
 		world = new Address[10][10];
+		 
+		// Initialization of world array
+		for(int i = 0;i<10;i++)
+			for(int j = 0;j<10;j++)
+				world[i][j] = new Address(i, j);
 		loadCitizens("citizens.csv");
 		loadBuildings("buildings.csv");
 		loadDisasters("disasters.csv");
@@ -107,5 +112,10 @@ public class Simulator {
 				return citizen;
 		}
 		return null;
+	}
+	
+	public static void main(String[]args) throws Exception {
+		Simulator s = new Simulator();
+		System.out.println(s.citizens.toString());
 	}
 }
