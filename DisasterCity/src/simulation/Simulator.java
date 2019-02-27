@@ -113,9 +113,4 @@ public class Simulator {
 		}
 		return null;
 	}
-	
-	public static void main(String[]args) throws Exception {
-		Simulator s = new Simulator();
-		System.out.println(s.citizens.toString());
-	}
 }
