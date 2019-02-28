@@ -15,8 +15,8 @@ public class CommandCenter {
 	private ArrayList<Unit> emergencyUnits;
 
 	// Constructor
-	public CommandCenter(Simulator engine) {
-		this.engine = engine;
+	public CommandCenter() throws Exception {
+		engine = new Simulator();
 		visibleBuildings = new ArrayList<ResidentialBuilding>();
 		visibleCitizens = new ArrayList<Citizen>();
 		emergencyUnits = new ArrayList<Unit>();

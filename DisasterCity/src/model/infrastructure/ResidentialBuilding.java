@@ -71,5 +71,10 @@ public class ResidentialBuilding implements Simulatable, Rescuable {
 	public void setFoundationDamage(int foundationDamage) {
 		this.foundationDamage = foundationDamage;
 	}
+	
+	// Methods
+	public void addOccupant(Citizen c) {
+		occupants.add(c);
+	}
 
 }

@@ -13,6 +13,11 @@ import model.disasters.Infection;
 import model.disasters.Injury;
 import model.infrastructure.ResidentialBuilding;
 import model.people.Citizen;
+import model.units.Ambulance;
+import model.units.DiseaseControlUnit;
+import model.units.Evacuator;
+import model.units.FireTruck;
+import model.units.GasControlUnit;
 import model.units.Unit;
 
 public class Simulator {
@@ -42,13 +47,36 @@ public class Simulator {
 		for(int i = 0;i<10;i++)
 			for(int j = 0;j<10;j++)
 				world[i][j] = new Address(i, j);
-		loadCitizens("citizens.csv");
 		loadBuildings("buildings.csv");
+		loadCitizens("citizens.csv");
 		loadDisasters("disasters.csv");
+		loadUnits("units.csv");
 	}
 
 	private void loadUnits(String filepath) throws Exception {
-		// TODO: Implement method
+		String currentLine = "";
+		fileReader = new FileReader(filepath);
+		br = new BufferedReader(fileReader);
+		while ((currentLine = br.readLine()) != null) {
+			String[] a = currentLine.split(",");
+			Unit unit;
+			switch(a[0]) {
+			case "AMB":
+				unit = new Ambulance(a[1], world[0][0], Integer.parseInt(a[2]));break;
+			case"DCU":	
+				unit = new DiseaseControlUnit(a[1], world[0][0], Integer.parseInt(a[2]));break;
+			case"EVC":
+				unit = new Evacuator(a[1], world[0][0], Integer.parseInt(a[2]),Integer.parseInt(a[3]));break;
+			case"FTK":
+				unit = new FireTruck(a[1], world[0][0], Integer.parseInt(a[2]));break;
+			case"GCU":
+				unit = new GasControlUnit(a[1], world[0][0], Integer.parseInt(a[2]));break;	
+			default:
+				unit = null;
+				
+			}
+			emergencyUnits.add(unit);
+		}
 	}
 
 	private void loadBuildings(String filepath) throws Exception {
@@ -69,9 +97,15 @@ public class Simulator {
 		br = new BufferedReader(fileReader);
 		while ((currentLine = br.readLine()) != null) {
 			String[] a = currentLine.split(",");
-			Address c = world[Integer.parseInt(a[0])][Integer.parseInt(a[1])];
+			int citX = Integer.parseInt(a[0]);
+			int citY = Integer.parseInt(a[1]);
+			Address c = world[citX][citY];
 			Citizen citizen = new Citizen(c,a[2],a[3],Integer.parseInt(a[4]));
 			citizens.add(citizen);
+			for(ResidentialBuilding b : buildings) {
+				if(b.getLocation().getX()==citX&&b.getLocation().getY()==citY)
+					b.addOccupant(citizen);
+			}
 		}
 	}
 
@@ -101,14 +135,14 @@ public class Simulator {
 	}
 	private ResidentialBuilding getBuilding(int x, int y) {
 		for(ResidentialBuilding building : buildings) {
-			if(building.getLocation()==world[x][y])
+			if(building.getLocation().getX()==x&&building.getLocation().getY()==y)
 				return building;
 		}
 		return null;
 	}
 	private Citizen getCitizen(String nationalID) {
 		for(Citizen citizen : citizens) {
-			if(citizen.getNationalID() == nationalID)
+			if(citizen.getNationalID().equals(nationalID))
 				return citizen;
 		}
 		return null;
